@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Wave Player</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="player-container">
+        <!-- Header -->
+        <div class="player-header">
+            <h2><i class="fa-solid fa-waveform"></i> YouTube Wave Player</h2>
+        </div>
+
+        <!-- Input URL YouTube -->
+        <div class="input-section">
+            <input type="text" id="youtube-url" placeholder="Paste YouTube link here (e.g., https://youtu.be/...)">
+            <button id="add-btn"><i class="fa-solid fa-plus"></i> Add</button>
+        </div>
+
+        <!-- Pemutar Tersembunyi (YouTube IFrame API) -->
+        <div id="player" style="display:none;"></div>
+
+        <!-- Visualisasi Info Lagu -->
+        <div class="song-info">
+            <div class="album-art">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <h3 id="song-title">Select or add a song</h3>
+            <p id="song-status">Waiting for music...</p>
+        </div>
+
+        <!-- Bagian Progress Bar (Bilah Lagu & Buffering) -->
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <div id="progress-bar" class="progress-bar">
+            <div id="progress-filled"></div>
+        </div>
+            <span id="duration">0:00</span>
+        </div>
+
+        <!-- Kontrol Player -->
+        <div class="controls">
+            <button id="shuffle-btn" class="control-btn"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="prev-btn" class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+            <button id="play-pause-btn" class="control-btn main-play"><i class="fa-solid fa-play"></i></button>
+            <button id="next-btn" class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+            <button id="repeat-btn" class="control-btn"><i class="fa-solid fa-repeat"></i></button>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-section">
+            <h4>Playlist (<span id="playlist-count">0</span>)</h4>
+            <ul id="playlist">
+                <!-- Daftar lagu akan masuk secara dinamis di sini -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="script.js"></script>
+    <!-- Script Resmi YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

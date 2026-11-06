@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(223, 225, 231, 0.8), rgba(32, 59, 122, 0.85)), 
+                url('https://www.miquido.com/wp-content/uploads/2024/08/header-How-streaming-changed-the-music-industry.jpg');
+    color: #edf0f3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.player-container {
+    background: rgba(4, 7, 12, 0.75); /* Transparan */
+    backdrop-filter: blur(12px);         /* Efek buram di belakang player */
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi halus */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* .player-container {
+    background: #26354d;
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+} */
+
+.player-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    flex: 1;
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+}
+
+.input-section input:focus {
+    border-color: #38bdf8;
+}
+
+.input-section button {
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.input-section button:hover {
+    background: #0ea5e9;
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.album-art {
+    width: 120px;
+    height: 120px;
+    background: #334155;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.song-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-info p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.control-btn:hover {
+    color: #fff;
+}
+
+.control-btn.main-play {
+    background: #38bdf8;
+    color: #0f172a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+.control-btn.main-play:hover {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+.playlist-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+#playlist {
+    list-style: none;
+    max-height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#playlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+#playlist::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+#playlist li {
+    background: #0f172a;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#playlist li:hover {
+    background: #334155;
+}
+
+#playlist li.active {
+    border-left: 4px solid #38bdf8;
+    color: #38bdf8;
+}
+
+#playlist li button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #334155;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#progress-filled {
+    width: 0%;
+    height: 100%;
+    background: #38bdf8;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
